@@ -1,4 +1,4 @@
-//boshua
+//
 //  AppDelegate.swift
 //  DND_Char_Sheet
 //
