@@ -10,7 +10,7 @@ import Foundation
 import UIKit
 
 func Roll(dice:(Int,Int))->Int{
-    var result: Int;
+    var result: Int = 0;
     for _ in 1...dice.0{
         result += Int(arc4random_uniform(UInt32(dice.1))+1);
     }
