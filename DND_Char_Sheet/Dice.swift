@@ -9,11 +9,11 @@
 import Foundation
 import UIKit
 
-func Roll(dice:(Int,Int),adv: Bool = false,disadv: Bool = false)->Int{
+func Roll(dice:(Int,Int),mod: Int = 0,adv: Bool = false,disadv: Bool = false)->Int{
     var result: Int = 0;
     if adv {
-        let rand1 = Int(arc4random_uniform(UInt32(dice.1))+1);
-        let rand2 = Int(arc4random_uniform(UInt32(dice.1))+1);
+        let rand1 = Int(arc4random_uniform(UInt32(dice.1))+1) + mod;
+        let rand2 = Int(arc4random_uniform(UInt32(dice.1))+1) + mod;
         if rand1 > rand2{
             return rand1;
         } else {
@@ -21,16 +21,21 @@ func Roll(dice:(Int,Int),adv: Bool = false,disadv: Bool = false)->Int{
         }
     }
     if disadv {
-        let rand1 = Int(arc4random_uniform(UInt32(dice.1))+1);
-        let rand2 = Int(arc4random_uniform(UInt32(dice.1))+1);
+        let rand1 = Int(arc4random_uniform(UInt32(dice.1))+1) + mod;
+        let rand2 = Int(arc4random_uniform(UInt32(dice.1))+1) + mod;
         if rand1 < rand2{
             return rand1;
         } else {
             return rand2;
         }
     }
-    for _ in 1...dice.0{
-        result += Int(arc4random_uniform(UInt32(dice.1))+1);
+    if (dice.0 > 1){
+        for _ in 1...dice.0{
+            result += Int(arc4random_uniform(UInt32(dice.1))+1);
+        }
+    }
+    else{
+        result = Int(arc4random_uniform(UInt32(dice.1))+1) + mod;
     }
     return result;
 }
