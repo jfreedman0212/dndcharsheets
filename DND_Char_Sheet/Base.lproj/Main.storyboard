@@ -18,9 +18,8 @@
         <!--Navigation Controller-->
         <scene sceneID="2Xa-WQ-eii">
             <objects>
-                <navigationController id="hgq-bl-4SM" sceneMemberID="viewController">
+                <navigationController navigationBarHidden="YES" id="hgq-bl-4SM" sceneMemberID="viewController">
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="mFV-kY-Yiv">
-                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
@@ -48,7 +47,7 @@
                                 </state>
                             </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="icons8-plus-math-50.png" translatesAutoresizingMaskIntoConstraints="NO" id="YKD-b5-Llu">
-                                <rect key="frame" x="195" y="576" width="35" height="35"/>
+                                <rect key="frame" x="200" y="576" width="30" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                         </subviews>
@@ -56,6 +55,7 @@
                         <viewLayoutGuide key="safeArea" id="7Dy-nO-5gt"/>
                     </view>
                     <navigationItem key="navigationItem" id="8O5-5c-bss"/>
+                    <nil key="simulatedTopBarMetrics"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="n16-FV-1de" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
