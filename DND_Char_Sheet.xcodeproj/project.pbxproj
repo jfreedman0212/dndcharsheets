@@ -12,7 +12,6 @@
 		752333A0204B4AC0006B7572 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7523339F204B4AC0006B7572 /* AppDelegate.swift */; };
 		752333A2204B4AC1006B7572 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 752333A1204B4AC1006B7572 /* ViewController.swift */; };
 		752333A5204B4AC1006B7572 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 752333A3204B4AC1006B7572 /* Main.storyboard */; };
-		752333A8204B4AC1006B7572 /* DND_Char_Sheet.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 752333A6204B4AC1006B7572 /* DND_Char_Sheet.xcdatamodeld */; };
 		752333AA204B4AC1006B7572 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 752333A9204B4AC1006B7572 /* Assets.xcassets */; };
 		752333AD204B4AC1006B7572 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 752333AB204B4AC1006B7572 /* LaunchScreen.storyboard */; };
 		D0941B04204B4F300051C625 /* Character.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0941B03204B4F300051C625 /* Character.swift */; };
@@ -26,7 +25,6 @@
 		7523339F204B4AC0006B7572 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		752333A1204B4AC1006B7572 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		752333A4204B4AC1006B7572 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		752333A7204B4AC1006B7572 /* DND_Char_Sheet.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = DND_Char_Sheet.xcdatamodel; sourceTree = "<group>"; };
 		752333A9204B4AC1006B7572 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		752333AC204B4AC1006B7572 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		752333AE204B4AC1006B7572 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -72,7 +70,6 @@
 				752333A9204B4AC1006B7572 /* Assets.xcassets */,
 				752333AB204B4AC1006B7572 /* LaunchScreen.storyboard */,
 				752333AE204B4AC1006B7572 /* Info.plist */,
-				752333A6204B4AC1006B7572 /* DND_Char_Sheet.xcdatamodeld */,
 				D0941B03204B4F300051C625 /* Character.swift */,
 				D0941B05204B58FD0051C625 /* Dice.swift */,
 			);
@@ -153,7 +150,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				752333A8204B4AC1006B7572 /* DND_Char_Sheet.xcdatamodeld in Sources */,
 				752333A2204B4AC1006B7572 /* ViewController.swift in Sources */,
 				D0941B06204B58FD0051C625 /* Dice.swift in Sources */,
 				752333A0204B4AC0006B7572 /* AppDelegate.swift in Sources */,
@@ -344,19 +340,6 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
-
-/* Begin XCVersionGroup section */
-		752333A6204B4AC1006B7572 /* DND_Char_Sheet.xcdatamodeld */ = {
-			isa = XCVersionGroup;
-			children = (
-				752333A7204B4AC1006B7572 /* DND_Char_Sheet.xcdatamodel */,
-			);
-			currentVersion = 752333A7204B4AC1006B7572 /* DND_Char_Sheet.xcdatamodel */;
-			path = DND_Char_Sheet.xcdatamodeld;
-			sourceTree = "<group>";
-			versionGroupType = wrapper.xcdatamodel;
-		};
-/* End XCVersionGroup section */
 	};
 	rootObject = 75233394204B4AC0006B7572 /* Project object */;
 }
