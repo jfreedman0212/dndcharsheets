@@ -50,16 +50,38 @@
                                 <rect key="frame" x="200" y="576" width="30" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="qKF-89-HIb">
+                                <rect key="frame" x="41" y="94" width="294" height="444"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </scrollView>
                         </subviews>
                         <color key="backgroundColor" red="0.70196078429999997" green="0.23921568630000001" blue="0.22352941179999999" alpha="1" colorSpace="calibratedRGB"/>
                         <viewLayoutGuide key="safeArea" id="7Dy-nO-5gt"/>
                     </view>
                     <navigationItem key="navigationItem" id="8O5-5c-bss"/>
                     <nil key="simulatedTopBarMetrics"/>
+                    <connections>
+                        <segue destination="tS4-Jn-odl" kind="show" identifier="addCharacter" id="1I5-Zc-vuw"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="n16-FV-1de" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="4" y="615.74212893553226"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="Dic-eK-izh">
+            <objects>
+                <viewController id="tS4-Jn-odl" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="7pO-GR-Pvo">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" red="0.70196078429999997" green="0.23921568630000001" blue="0.22352941179999999" alpha="1" colorSpace="calibratedRGB"/>
+                        <viewLayoutGuide key="safeArea" id="wSF-3L-sqD"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="6ou-pb-I3d" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-583" y="1449"/>
         </scene>
     </scenes>
     <resources>
