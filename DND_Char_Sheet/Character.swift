@@ -118,5 +118,85 @@ class Character{
         cha_mod = (cha-10)/2;
         
     }
+    
+    func GetAbility(a: String) -> Int{
+        var result: Int;
+        switch(a){
+        case "Strength":
+            result = str;
+            break
+        case "Dexterity":
+            result = dex;
+            break
+        case "Constitution":
+            result = con;
+            break
+        case "Intelligence":
+            result = int
+            break
+        case "Wisdom":
+            result = wis;
+            break
+        case "Charisma":
+            result = cha;
+            break
+        default:
+            result = str;
+            break
+        }
+        return result;
+    }
+    
+    func GetModifier(a: String) -> Int{
+        var result: Int;
+        switch(a){
+        case "Strength":
+            result = str;
+            break
+        case "Dexterity":
+            result = dex;
+            break
+        case "Constitution":
+            result = con;
+            break
+        case "Intelligence":
+            result = int
+            break
+        case "Wisdom":
+            result = wis;
+            break
+        case "Charisma":
+            result = cha;
+            break
+        default:
+            result = str;
+            break
+        }
+        result = (result - 10)/2;
+        return result;
+    }
+    
+    func GetProperties(a: String) -> String{
+        var result: String;
+        switch(a){
+        case "Name":
+            result=name;
+            break
+        case "Race":
+            result=race;
+            break
+        case "Class":
+            result=clss;
+            break
+        default:
+            result=name;
+            break;
+        }
+        return result;
+    }
+    
+    func GetHitDice() -> (Int,Int){
+        return hit_dice;
+    }
 }
 
