@@ -13,6 +13,7 @@
 		752333A8204B4AC1006B7572 /* DND_Char_Sheet.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 752333A6204B4AC1006B7572 /* DND_Char_Sheet.xcdatamodeld */; };
 		752333AA204B4AC1006B7572 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 752333A9204B4AC1006B7572 /* Assets.xcassets */; };
 		752333AD204B4AC1006B7572 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 752333AB204B4AC1006B7572 /* LaunchScreen.storyboard */; };
+		D0941B04204B4F300051C625 /* Character.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0941B03204B4F300051C625 /* Character.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		752333A9204B4AC1006B7572 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		752333AC204B4AC1006B7572 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		752333AE204B4AC1006B7572 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D0941B03204B4F300051C625 /* Character.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Character.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,6 +65,7 @@
 				752333AB204B4AC1006B7572 /* LaunchScreen.storyboard */,
 				752333AE204B4AC1006B7572 /* Info.plist */,
 				752333A6204B4AC1006B7572 /* DND_Char_Sheet.xcdatamodeld */,
+				D0941B03204B4F300051C625 /* Character.swift */,
 			);
 			path = DND_Char_Sheet;
 			sourceTree = "<group>";
@@ -142,6 +145,7 @@
 				752333A8204B4AC1006B7572 /* DND_Char_Sheet.xcdatamodeld in Sources */,
 				752333A2204B4AC1006B7572 /* ViewController.swift in Sources */,
 				752333A0204B4AC0006B7572 /* AppDelegate.swift in Sources */,
+				D0941B04204B4F300051C625 /* Character.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
