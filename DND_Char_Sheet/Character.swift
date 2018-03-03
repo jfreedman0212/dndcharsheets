@@ -176,7 +176,7 @@ class Character{
         return result;
     }
     
-    func GetProperties(a: String) -> String{
+    func GetProperty(a: String) -> String{
         var result: String;
         switch(a){
         case "Name":
