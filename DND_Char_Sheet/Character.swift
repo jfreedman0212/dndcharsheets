@@ -11,7 +11,6 @@ import UIKit
 
 class Character{
     var str,dex,con,int,wis,cha: Int;
-    var str_mod,dex_mod,con_mod,int_mod,wis_mod,cha_mod: Int;
     var clss,race,name: String;
     var hit_dice: (Int,Int);
     
@@ -109,13 +108,6 @@ class Character{
         else{
             hit_dice=(1,10);
         }
-        
-        str_mod = (str-10)/2;
-        dex_mod = (dex-10)/2;
-        con_mod = (con-10)/2;
-        int_mod = (int-10)/2;
-        wis_mod = (wis-10)/2;
-        cha_mod = (cha-10)/2;
         
     }
     

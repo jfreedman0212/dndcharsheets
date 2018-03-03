@@ -6,8 +6,14 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="DUNGRG__.TTF">
+            <string>Dungeon</string>
+        </array>
+    </customFonts>
     <scenes>
         <!--Navigation Controller-->
         <scene sceneID="2Xa-WQ-eii">
@@ -17,10 +23,46 @@
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
+                    <connections>
+                        <segue destination="eEg-Ce-KeG" kind="relationship" relationship="rootViewController" id="icx-lL-C4P"/>
+                    </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="sP8-6L-70y" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="4" y="-121"/>
         </scene>
+        <!--View Controller-->
+        <scene sceneID="7u3-jB-ki6">
+            <objects>
+                <viewController id="eEg-Ce-KeG" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="mKh-A2-Kes">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iS5-bC-ppH">
+                                <rect key="frame" x="145" y="576" width="85" height="35"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="Dungeon" family="Dungeon" pointSize="40"/>
+                                <state key="normal" title="Add">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                            </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="icons8-plus-math-50.png" translatesAutoresizingMaskIntoConstraints="NO" id="YKD-b5-Llu">
+                                <rect key="frame" x="195" y="576" width="35" height="35"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" red="0.70196078429999997" green="0.23921568630000001" blue="0.22352941179999999" alpha="1" colorSpace="calibratedRGB"/>
+                        <viewLayoutGuide key="safeArea" id="7Dy-nO-5gt"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="8O5-5c-bss"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="n16-FV-1de" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4" y="615.74212893553226"/>
+        </scene>
     </scenes>
+    <resources>
+        <image name="icons8-plus-math-50.png" width="50" height="50"/>
+    </resources>
 </document>
