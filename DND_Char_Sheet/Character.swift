@@ -18,7 +18,7 @@ class Character{
     init(s: Int,d: Int,c: Int,i: Int,w: Int,ch: Int,cl: String,r: String,n: String,extra: String = "",extra2: String = "") {
         str=s;dex=d;con=c;int=i;wis=w;cha=ch;
         clss = cl; race = r;name = n;
-        switch(clss){
+        switch(r){
         case "Hill Dwarf":
             con+=2;wis+=1;
             break
@@ -88,9 +88,28 @@ class Character{
                 }
             }
             break
+        case "Half-Orc":
+            str+=2;con+=1;
+            break
+        case "Tiefling":
+            int+=1;cha+=2;
+            break
         default:
             break
         }
+        if cl == "Bard" || cl == "Cleric" || cl == "Druid" || cl == "Monk" || cl == "Rogue" || cl == "Warlock" {
+            hit_dice=(1,8);
+        }
+        else if (cl == "Sorcerer" || cl == "Wizard"){
+            hit_dice=(1,6);
+        }
+        else if(cl == "Barbarian"){
+            hit_dice=(1,12);
+        }
+        else{
+            hit_dice=(1,10);
+        }
+        
         str_mod = (str-10)/2;
         dex_mod = (dex-10)/2;
         con_mod = (con-10)/2;
