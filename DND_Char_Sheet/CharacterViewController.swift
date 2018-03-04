@@ -7,7 +7,7 @@
 //
 
 import UIKit
-// global variable that stores the current character
+import os.log
 
 class CharacterViewController: UIViewController {
 
@@ -57,42 +57,54 @@ class CharacterViewController: UIViewController {
     @IBAction func strengthDecrement(_ sender: Any) {
         if currentCharacter.str > 0 {
             currentCharacter.str -= 1
-            CharToBeAdded.str = currentCharacter.str
+            let index = characters.index(of: currentCharacter)
+            characters[index!].str = currentCharacter.str
+            saveCharacters()
             strengthVal.text = String(currentCharacter.str)
         }
     }
     @IBAction func dexterityDecrement(_ sender: Any) {
         if currentCharacter.dex > 0 {
             currentCharacter.dex -= 1
-            CharToBeAdded.dex = currentCharacter.dex
+            let index = characters.index(of: currentCharacter)
+            characters[index!].dex = currentCharacter.dex
+            saveCharacters()
             dexterityVal.text = String(currentCharacter.dex)
         }
     }
     @IBAction func constitutionDecrement(_ sender: Any) {
         if currentCharacter.con > 0 {
             currentCharacter.con -= 1
-            CharToBeAdded.con = currentCharacter.con
+            let index = characters.index(of: currentCharacter)
+            characters[index!].con = currentCharacter.con
+            saveCharacters()
             constitutionVal.text = String(currentCharacter.con)
         }
     }
     @IBAction func intelligenceDecrement(_ sender: Any) {
         if currentCharacter.int > 0 {
             currentCharacter.int -= 1
-            CharToBeAdded.int = currentCharacter.int
+            let index = characters.index(of: currentCharacter)
+            characters[index!].int = currentCharacter.int
+            saveCharacters()
             intelligenceVal.text = String(currentCharacter.int)
         }
     }
     @IBAction func wisdomDecrement(_ sender: Any) {
         if currentCharacter.wis > 0 {
             currentCharacter.wis -= 1
-            CharToBeAdded.wis = currentCharacter.wis
+            let index = characters.index(of: currentCharacter)
+            characters[index!].wis = currentCharacter.wis
+            saveCharacters()
             wisdomVal.text = String(currentCharacter.wis)
         }
     }
     @IBAction func charismaDecrement(_ sender: Any) {
         if currentCharacter.cha > 0 {
             currentCharacter.cha -= 1
-            CharToBeAdded.cha = currentCharacter.cha
+            let index = characters.index(of: currentCharacter)
+            characters[index!].cha = currentCharacter.cha
+            saveCharacters()
             charismaVal.text = String(currentCharacter.cha)
         }
     }
@@ -103,42 +115,54 @@ class CharacterViewController: UIViewController {
     @IBAction func strengthIncrement(_ sender: Any) {
         if currentCharacter.str < 20 {
             currentCharacter.str += 1
-            CharToBeAdded.str = currentCharacter.str
+            let index = characters.index(of: currentCharacter)
+            characters[index!].str = currentCharacter.str
+            saveCharacters()
             strengthVal.text = String(currentCharacter.str)
         }
     }
     @IBAction func dexterityIncrement(_ sender: Any) {
         if currentCharacter.dex < 20 {
             currentCharacter.dex += 1
-            CharToBeAdded.dex = currentCharacter.dex
+            let index = characters.index(of: currentCharacter)
+            characters[index!].dex = currentCharacter.dex
+            saveCharacters()
             dexterityVal.text = String(currentCharacter.dex)
         }
     }
     @IBAction func constitutionIncrement(_ sender: Any) {
         if currentCharacter.con < 20 {
             currentCharacter.con += 1
-            CharToBeAdded.con = currentCharacter.con
+            let index = characters.index(of: currentCharacter)
+            characters[index!].con = currentCharacter.con
+            saveCharacters()
             constitutionVal.text = String(currentCharacter.con)
         }
     }
     @IBAction func intelligenceIncrement(_ sender: Any) {
         if currentCharacter.int < 20 {
             currentCharacter.int += 1
-            CharToBeAdded.int = currentCharacter.int
+            let index = characters.index(of: currentCharacter)
+            characters[index!].int = currentCharacter.int
+            saveCharacters()
             intelligenceVal.text = String(currentCharacter.int)
         }
     }
     @IBAction func wisdomIncrement(_ sender: Any) {
         if currentCharacter.wis < 20 {
             currentCharacter.wis += 1
-            CharToBeAdded.wis = currentCharacter.wis
+            let index = characters.index(of: currentCharacter)
+            characters[index!].wis = currentCharacter.wis
+            saveCharacters()
             wisdomVal.text = String(currentCharacter.wis)
         }
     }
     @IBAction func charismaIncrement(_ sender: Any) {
         if currentCharacter.cha < 20 {
             currentCharacter.cha += 1
-            CharToBeAdded.cha = currentCharacter.cha
+            let index = characters.index(of: currentCharacter)
+            characters[index!].cha =  currentCharacter.cha
+            saveCharacters()
             charismaVal.text = String(currentCharacter.cha)
         }
     }
@@ -163,6 +187,15 @@ class CharacterViewController: UIViewController {
     }
     @IBAction func charismaRoll(_ sender: Any) {
         
+    }
+    
+    private func saveCharacters() {
+        let isSuccessfulSave = NSKeyedArchiver.archiveRootObject(characters, toFile: Character.ArchiveURL.path)
+        if isSuccessfulSave {
+            os_log("Characters successfully saved.", log: OSLog.default, type: .debug)
+        } else {
+            os_log("Failed to save characters...", log: OSLog.default, type: .error)
+        }
     }
     
     /*

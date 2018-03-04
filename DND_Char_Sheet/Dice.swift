@@ -39,3 +39,4 @@ func Roll(dice:(Int,Int)=(1,20),mod: Int = 0,adv: Bool = false,disadv: Bool = fa
     }
     return result;
 }
+

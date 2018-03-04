@@ -39,16 +39,18 @@ class StatsViewController: UIViewController {
     @IBAction func makeStatsPressed(_ sender: Any) {
         // run the save functionality for the newly created character
         // ALSO this does not do much error checking, so later, please fix this
-        CharToBeAdded.str = Int(strengthField.text!)
-        CharToBeAdded.int = Int(intelligenceField.text!)
-        CharToBeAdded.cha = Int(charismaField.text!)
-        CharToBeAdded.con = Int(constitutionField.text!)
-        CharToBeAdded.wis = Int(wisdomField.text!)
-        CharToBeAdded.dex = Int(dexterityField.text!)
+        if strengthField.text != nil && intelligenceField.text != nil && charismaField.text != nil && constitutionField.text != nil && wisdomField.text != nil && dexterityField.text != nil {
+            CharToBeAdded.str = Int(strengthField.text!)
+            CharToBeAdded.int = Int(intelligenceField.text!)
+            CharToBeAdded.cha = Int(charismaField.text!)
+            CharToBeAdded.con = Int(constitutionField.text!)
+            CharToBeAdded.wis = Int(wisdomField.text!)
+            CharToBeAdded.dex = Int(dexterityField.text!)
         
-        characters.append(Character(s: CharToBeAdded.str!, d: CharToBeAdded.dex!, c: CharToBeAdded.con!, i: CharToBeAdded.int!, w: CharToBeAdded.wis!, ch: CharToBeAdded.cha!, cl: CharToBeAdded.clss!, r: CharToBeAdded.race!, n: CharToBeAdded.name!))
-        saveCharacters()
-        performSegue(withIdentifier: "toMain", sender: nil)
+            characters.append(Character(s: CharToBeAdded.str!, d: CharToBeAdded.dex!, c: CharToBeAdded.con!, i: CharToBeAdded.int!, w: CharToBeAdded.wis!, ch: CharToBeAdded.cha!, cl:      CharToBeAdded.clss!, r: CharToBeAdded.race!, n: CharToBeAdded.name!))
+            saveCharacters()
+            performSegue(withIdentifier: "toMain", sender: nil)
+        }
     }
 
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
