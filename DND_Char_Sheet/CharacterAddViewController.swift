@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import os.log
 
 class CharacterAddViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
     
@@ -21,6 +22,9 @@ class CharacterAddViewController: UIViewController, UIPickerViewDelegate, UIPick
     var races: [String] = [String]()
     var classesSelected = false
     var racesSelected = false
+    
+    // this is for loading
+    var characters = [Character]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -112,7 +116,22 @@ class CharacterAddViewController: UIViewController, UIPickerViewDelegate, UIPick
         self.view.endEditing(true)
     }
     
-
+    // MARK: adding save/load functionality
+    
+    private func saveCharacters() {
+        let isSuccessfulSave = NSKeyedArchiver.archiveRootObject(characters, toFile: Character.ArchiveURL.path)
+        if isSuccessfulSave {
+            os_log("Characters successfully saved.", log: OSLog.default, type: .debug)
+        } else {
+            os_log("Failed to save characters...", log: OSLog.default, type: .error)
+        }
+    }
+    
+    private func loadCharacters() -> [Character]?  {
+        return NSKeyedUnarchiver.unarchiveObject(withFile: Character.ArchiveURL.path) as? [Character]
+    }
+    
+    
     
     /*
     // MARK: - Navigation
