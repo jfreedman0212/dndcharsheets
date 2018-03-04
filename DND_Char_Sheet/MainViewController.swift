@@ -24,7 +24,14 @@ class MainViewController: UIViewController {
 
         // Do any additional setup after loading the view.
         viewWillAppear(false)
-
+        
+        let xConst = 41.0
+        let yInit = 94.0
+        scrollView.contentSize = CGSize(width: 294, height: 444 + ((Double(characters.count) - 8) * 55.5))
+        for index in 0...characters.count - 1 {
+            let button = UIButton(frame: CGRect(x: xConst, y: yInit + (Double(index) * 55.5), width: 294.0, height: 55.5))
+                scrollView.addSubview(button)
+        }
     }
 
     override func didReceiveMemoryWarning() {
