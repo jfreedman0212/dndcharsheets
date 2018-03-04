@@ -26,7 +26,7 @@ class MainViewController: UIViewController {
     
     override func viewDidAppear(_ animated: Bool) {
         let xConst = 100.0
-        let yInit = 94.0
+        let yInit = 10.0
         scrollView.contentSize = CGSize(width: 294, height: 444 + ((Double(characters.count) - 8) * 55.5))
         if characters.count > 0 {
             for index in 0...characters.count - 1 {
@@ -38,9 +38,15 @@ class MainViewController: UIViewController {
                 button.titleLabel?.font = UIFont(name: "Dungeon", size: 34)
                 button.backgroundColor = .clear
                 button.contentHorizontalAlignment = UIControlContentHorizontalAlignment.center
+                button.addTarget(self, action: #selector(charButton(sender:)), for: UIControlEvents.touchUpInside)
+                characterButtons[index] = button
                 scrollView.addSubview(button)
             }
         }
+    }
+    
+    @objc func charButton(sender: UIButton!) {
+        performSegue(withIdentifier: "toCharacter", sender: nil)
     }
 
     override func didReceiveMemoryWarning() {
