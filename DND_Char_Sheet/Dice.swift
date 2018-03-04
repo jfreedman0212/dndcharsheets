@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-func Roll(dice:(Int,Int),mod: Int = 0,adv: Bool = false,disadv: Bool = false)->Int{
+func Roll(dice:(Int,Int)=(1,20),mod: Int = 0,adv: Bool = false,disadv: Bool = false)->Int{
     var result: Int = 0;
     if adv {
         let rand1 = Int(arc4random_uniform(UInt32(dice.1))+1) + mod;
