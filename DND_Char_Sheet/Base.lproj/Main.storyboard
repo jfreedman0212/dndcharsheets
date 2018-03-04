@@ -442,6 +442,7 @@
                         <outlet property="intelligenceVal" destination="PTh-39-We6" id="653-yh-fYd"/>
                         <outlet property="nameVal" destination="5fg-tf-OQA" id="edu-My-Zaz"/>
                         <outlet property="raceVal" destination="oOM-Ij-yZl" id="shy-Gl-z0U"/>
+                        <outlet property="rollVal" destination="fTV-ct-hhc" id="IaR-R2-dfo"/>
                         <outlet property="strengthVal" destination="uq2-e9-iNj" id="o03-fF-hku"/>
                         <outlet property="wisdomVal" destination="hJz-gv-vJB" id="iau-yO-Bcg"/>
                     </connections>

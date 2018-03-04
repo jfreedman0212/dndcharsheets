@@ -22,6 +22,8 @@ class CharacterViewController: UIViewController {
     @IBOutlet weak var wisdomVal: UILabel!
     @IBOutlet weak var charismaVal: UILabel!
     
+    @IBOutlet weak var rollVal: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         viewWillDisappear(true)
@@ -167,26 +169,23 @@ class CharacterViewController: UIViewController {
         }
     }
     
-    
-    
-    
     @IBAction func strengthRoll(_ sender: Any) {
-        
+        rollVal.text = String(Roll(mod: currentCharacter.GetModifier(a: "Strength")))
     }
     @IBAction func dexterityRoll(_ sender: Any) {
-        
+        rollVal.text = String(Roll(mod: currentCharacter.GetModifier(a: "Dexterity")))
     }
     @IBAction func constitutionRoll(_ sender: Any) {
-        
+        rollVal.text = String(Roll(mod: currentCharacter.GetModifier(a: "Constitution")))
     }
     @IBAction func intelligenceRoll(_ sender: Any) {
-        
+        rollVal.text = String(Roll(mod: currentCharacter.GetModifier(a: "Intelligence")))
     }
     @IBAction func wisdomRoll(_ sender: Any) {
-        
+        rollVal.text = String(Roll(mod: currentCharacter.GetModifier(a: "Wisdom")))
     }
     @IBAction func charismaRoll(_ sender: Any) {
-        
+        rollVal.text = String(Roll(mod: currentCharacter.GetModifier(a: "Charisma")))
     }
     
     private func saveCharacters() {
