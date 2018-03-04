@@ -55,38 +55,44 @@ class CharacterViewController: UIViewController {
     }
     
     @IBAction func strengthDecrement(_ sender: Any) {
-        if currentCharacter.str >= 0 {
+        if currentCharacter.str > 0 {
             currentCharacter.str -= 1
+            CharToBeAdded.str = currentCharacter.str
             strengthVal.text = String(currentCharacter.str)
         }
     }
     @IBAction func dexterityDecrement(_ sender: Any) {
-        if currentCharacter.dex >= 0 {
+        if currentCharacter.dex > 0 {
             currentCharacter.dex -= 1
+            CharToBeAdded.dex = currentCharacter.dex
             dexterityVal.text = String(currentCharacter.dex)
         }
     }
     @IBAction func constitutionDecrement(_ sender: Any) {
-        if currentCharacter.con >= 0 {
+        if currentCharacter.con > 0 {
             currentCharacter.con -= 1
+            CharToBeAdded.con = currentCharacter.con
             constitutionVal.text = String(currentCharacter.con)
         }
     }
     @IBAction func intelligenceDecrement(_ sender: Any) {
-        if currentCharacter.int >= 0 {
+        if currentCharacter.int > 0 {
             currentCharacter.int -= 1
+            CharToBeAdded.int = currentCharacter.int
             intelligenceVal.text = String(currentCharacter.int)
         }
     }
     @IBAction func wisdomDecrement(_ sender: Any) {
-        if currentCharacter.wis >= 0 {
+        if currentCharacter.wis > 0 {
             currentCharacter.wis -= 1
+            CharToBeAdded.wis = currentCharacter.wis
             wisdomVal.text = String(currentCharacter.wis)
         }
     }
     @IBAction func charismaDecrement(_ sender: Any) {
-        if currentCharacter.cha >= 0 {
+        if currentCharacter.cha > 0 {
             currentCharacter.cha -= 1
+            CharToBeAdded.cha = currentCharacter.cha
             charismaVal.text = String(currentCharacter.cha)
         }
     }
@@ -95,38 +101,44 @@ class CharacterViewController: UIViewController {
     
     
     @IBAction func strengthIncrement(_ sender: Any) {
-        if currentCharacter.str <= 20 {
+        if currentCharacter.str < 20 {
             currentCharacter.str += 1
+            CharToBeAdded.str = currentCharacter.str
             strengthVal.text = String(currentCharacter.str)
         }
     }
     @IBAction func dexterityIncrement(_ sender: Any) {
-        if currentCharacter.dex <= 20 {
+        if currentCharacter.dex < 20 {
             currentCharacter.dex += 1
+            CharToBeAdded.dex = currentCharacter.dex
             dexterityVal.text = String(currentCharacter.dex)
         }
     }
     @IBAction func constitutionIncrement(_ sender: Any) {
-        if currentCharacter.con <= 20 {
+        if currentCharacter.con < 20 {
             currentCharacter.con += 1
+            CharToBeAdded.con = currentCharacter.con
             constitutionVal.text = String(currentCharacter.con)
         }
     }
     @IBAction func intelligenceIncrement(_ sender: Any) {
-        if currentCharacter.int <= 20 {
+        if currentCharacter.int < 20 {
             currentCharacter.int += 1
+            CharToBeAdded.int = currentCharacter.int
             intelligenceVal.text = String(currentCharacter.int)
         }
     }
     @IBAction func wisdomIncrement(_ sender: Any) {
-        if currentCharacter.wis <= 20 {
+        if currentCharacter.wis < 20 {
             currentCharacter.wis += 1
+            CharToBeAdded.wis = currentCharacter.wis
             wisdomVal.text = String(currentCharacter.wis)
         }
     }
     @IBAction func charismaIncrement(_ sender: Any) {
-        if currentCharacter.cha <= 20 {
+        if currentCharacter.cha < 20 {
             currentCharacter.cha += 1
+            CharToBeAdded.cha = currentCharacter.cha
             charismaVal.text = String(currentCharacter.cha)
         }
     }
