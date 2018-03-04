@@ -206,14 +206,14 @@ class Character{
         return hit_dice;
     }
     func DisplayHitDice() -> String {
-        let result = String(hit_dice.0) + "d" + String(hit_dice.1);
+        let result = "\(hit_dice.0)d\(hit_dice.1)";
         return result;
     }
     func GetMaxHitDice() -> (Int,Int){
         return max_hit_dice;
     }
     func DisplayMaxHitDice() -> String {
-        let result = String(max_hit_dice.0) + "d" + String(max_hit_dice.1);
+        let result = "\(max_hit_dice.0)d\(max_hit_dice.1)";
         return result;
     }
     
@@ -273,7 +273,6 @@ class Character{
         else {
             max_hit_dice.0 += 1;
         }
-        
     }
     func DecHitDice(){
         if max_hit_dice == hit_dice{
