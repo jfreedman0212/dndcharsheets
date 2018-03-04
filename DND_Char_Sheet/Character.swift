@@ -96,7 +96,7 @@ class Character: NSObject,NSCoding{
             int+=1;cha+=2;
             break
         default:
-            str+=1;dex+=1;con+=1;int+=1;wis+=1;cha+=1;
+            str+=0;dex+=0;con+=0;int+=1;wis+=0;cha+=0;
             break
         }
         if cl == "Bard" || cl == "Cleric" || cl == "Druid" || cl == "Monk" || cl == "Rogue" || cl == "Warlock" {
