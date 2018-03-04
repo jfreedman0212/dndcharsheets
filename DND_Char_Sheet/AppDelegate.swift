@@ -18,10 +18,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         
-        UINavigationBar.appearance().backgroundColor = UIColor.init(red: 179/255, green: 61/255, blue: 57/255, alpha: 1.0)
-        UINavigationBar.appearance().tintColor = UIColor.black
-        UINavigationBar.appearance().isOpaque = true
-        
+        UIBarButtonItem.appearance().setTitleTextAttributes([NSAttributedStringKey.font: UIFont(name: "Dungeon", size: 34)!], for: UIControlState.normal)
+        UIBarButtonItem.appearance().setTitleTextAttributes([NSAttributedStringKey.font: UIFont(name: "Dungeon", size: 34)!], for: UIControlState.highlighted)
         return true
     }
 

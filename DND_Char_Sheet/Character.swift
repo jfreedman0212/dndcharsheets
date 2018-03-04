@@ -192,11 +192,23 @@ class Character: NSObject,NSCoding{
     func GetHitDice() -> (Int,Int){
         return hit_dice;
     }
+    func DisplayHitDice() -> String {
+        let result = "\(hit_dice.0)d\(hit_dice.1)";
+        return result;
+    }
+    func GetMaxHitDice() -> (Int,Int){
+        return max_hit_dice;
+    }
+    func DisplayMaxHitDice() -> String {
+        let result = "\(max_hit_dice.0)d\(max_hit_dice.1)";
+        return result;
+    }
     
     func IncAbility(a: String){
         switch(a){
         case "Strength":
             str+=1;
+            break
         case "Dexterity":
             dex+=1;
             break
@@ -221,6 +233,7 @@ class Character: NSObject,NSCoding{
         switch(a){
         case "Strength":
             str-=1;
+            break
         case "Dexterity":
             dex-=1;
             break
@@ -242,15 +255,33 @@ class Character: NSObject,NSCoding{
         }
     }
     func IncHitDice(){
-        hit_dice.0 -= 1;
+        if max_hit_dice == hit_dice{
+            max_hit_dice.0 += 1;
+            hit_dice.0 += 1;
+        }
+        else {
+            max_hit_dice.0 += 1;
+        }
     }
     func DecHitDice(){
-        if hit_dice.0 > 0{
-            hit_dice.0 -= 1;
+        if max_hit_dice == hit_dice{
+            if max_hit_dice.0 > 0{
+                max_hit_dice.0 -= 1;
+            }
+            if hit_dice.0 > 0 {
+                hit_dice.0 -= 1;
+            }
+        }
+        else{
+            if max_hit_dice.0 > 0{
+                max_hit_dice.0 -= 1;
+            }
         }
     }
     func UseHitDice(num: Int) -> Int{
-        return Roll(dice:(num,hit_dice.1));
+        let temp_dice = hit_dice;
+        hit_dice.0 -= num;
+        return Roll(dice:(num,temp_dice.1));
     }
     func RefreshHitDice(){
         hit_dice = max_hit_dice;

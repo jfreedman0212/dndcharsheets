@@ -15,6 +15,14 @@ class CharacterAddViewController: UIViewController {
 
         // Do any additional setup after loading the view.
         viewWillDisappear(true)
+        
+        self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
+        self.navigationController?.navigationBar.shadowImage = UIImage()
+        self.navigationController?.navigationBar.isTranslucent = true
+        self.navigationController?.navigationBar.tintColor = UIColor.black
+        self.navigationController?.view.backgroundColor = .clear
+        
+
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -25,6 +33,10 @@ class CharacterAddViewController: UIViewController {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        self.view.endEditing(true)
     }
     
 
