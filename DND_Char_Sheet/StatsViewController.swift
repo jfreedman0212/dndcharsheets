@@ -9,7 +9,7 @@
 import UIKit
 
 class StatsViewController: UIViewController {
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -26,6 +26,10 @@ class StatsViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    @IBAction func makeStatsPressed(_ sender: Any) {
+        performSegue(withIdentifier: "toMain", sender: nil)
+    }
+
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         self.view.endEditing(true)
     }

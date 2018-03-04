@@ -213,13 +213,17 @@
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
-                                    <action selector="createPressed:" destination="tS4-Jn-odl" eventType="touchUpInside" id="wj1-Xg-ee2"/>
+                                    <action selector="makeStatsPressed:" destination="Ett-8F-yxM" eventType="touchUpInside" id="gDb-hl-QVz"/>
                                 </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" red="0.70196078429999997" green="0.23921568630000001" blue="0.22352941179999999" alpha="1" colorSpace="calibratedRGB"/>
                         <viewLayoutGuide key="safeArea" id="RWp-q4-yQw"/>
                     </view>
+                    <connections>
+                        <outlet property="addStatsButton" destination="sUz-Yl-8rC" id="l4D-Y3-NG3"/>
+                        <segue destination="hgq-bl-4SM" kind="show" identifier="toMain" id="YE3-GC-ZI1"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="JRE-5z-9Hp" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
