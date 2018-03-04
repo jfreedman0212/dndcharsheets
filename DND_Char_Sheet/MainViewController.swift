@@ -30,7 +30,8 @@ class MainViewController: UIViewController {
         let xConst = 100.0
         let yInit = 10.0
         scrollView.contentSize = CGSize(width: 294, height: 444 + ((Double(characters.count) - 8) * 55.5))
-        if characters.count > 0 {
+        if loadCharacters() != nil {
+            characters = loadCharacters()!
             for index in 0...characters.count - 1 {
                 let yLocation = yInit + (Double(index) * 55.5)
                 let button = UIButton(frame: CGRect(x: xConst, y: yLocation, width: 97.0, height: 55.5))
@@ -41,13 +42,20 @@ class MainViewController: UIViewController {
                 button.backgroundColor = .clear
                 button.contentHorizontalAlignment = UIControlContentHorizontalAlignment.center
                 button.addTarget(self, action: #selector(charButton(sender:)), for: UIControlEvents.touchUpInside)
-                characterButtons[index] = button
+                characterButtons.append(button)
                 scrollView.addSubview(button)
             }
         }
     }
     
     @objc func charButton(sender: UIButton!) {
+        for c in characters {
+            if sender.currentTitle == c.GetProperty(a: "name") {
+                currentCharacter = c
+                //print(currentCharacter.GetProperty(a: "name"))
+                break
+            }
+        }
         performSegue(withIdentifier: "toCharacter", sender: nil)
     }
 
