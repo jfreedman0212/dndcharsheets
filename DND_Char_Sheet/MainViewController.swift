@@ -13,10 +13,16 @@ class MainViewController: UIViewController {
     //GetProperty(String: a)
     
     @IBOutlet weak var scrollView: UIScrollView!
-    var characters: [String] = [String]()
+    var characterButtons = [UIButton]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        if loadCharacters() != nil {
+            characters = loadCharacters()!
+            for char in characters {
+                print(char.GetProperty(a: "name"))
+            }
+        }
 
         // Do any additional setup after loading the view.
         viewWillAppear(false)
@@ -48,6 +54,11 @@ class MainViewController: UIViewController {
 
     @IBAction func addCharacter(_ sender: Any) {
         self.performSegue(withIdentifier: "addCharacter", sender: nil)
+    }
+    
+    
+    private func loadCharacters() -> [Character]?  {
+        return NSKeyedUnarchiver.unarchiveObject(withFile: Character.ArchiveURL.path) as? [Character]
     }
 
 }

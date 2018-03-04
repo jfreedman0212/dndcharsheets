@@ -9,10 +9,12 @@
 import UIKit
 import os.log
 
+// this is for loading
+// GLOBAL
+var characters = [Character]()
+
 class StatsViewController: UIViewController {
     
-    // this is for loading
-    var characters = [Character]()
     
     @IBOutlet weak var strengthField: UITextField!
     @IBOutlet weak var dexterityField: UITextField!
@@ -40,14 +42,15 @@ class StatsViewController: UIViewController {
     @IBAction func makeStatsPressed(_ sender: Any) {
         // run the save functionality for the newly created character
         // ALSO this does not do much error checking, so later, please fix this
-        /*CharToBeAdded.str =
-        CharToBeAdded.int =
-        CharToBeAdded.cha =
-        CharToBeAdded.con =
-        CharToBeAdded.wis =
-        CharToBeAdded.dex =
-        */
+        CharToBeAdded.str = Int(strengthField.text!)
+        CharToBeAdded.int = Int(intelligenceField.text!)
+        CharToBeAdded.cha = Int(charismaField.text!)
+        CharToBeAdded.con = Int(constitutionField.text!)
+        CharToBeAdded.wis = Int(wisdomField.text!)
+        CharToBeAdded.dex = Int(dexterityField.text!)
         
+        characters.append(Character(s: CharToBeAdded.str!, d: CharToBeAdded.dex!, c: CharToBeAdded.con!, i: CharToBeAdded.int!, w: CharToBeAdded.wis!, ch: CharToBeAdded.cha!, cl: CharToBeAdded.clss!, r: CharToBeAdded.race!, n: CharToBeAdded.name!))
+        saveCharacters()
         performSegue(withIdentifier: "toMain", sender: nil)
     }
 
@@ -65,9 +68,5 @@ class StatsViewController: UIViewController {
         } else {
             os_log("Failed to save characters...", log: OSLog.default, type: .error)
         }
-    }
-    
-    private func loadCharacters() -> [Character]?  {
-        return NSKeyedUnarchiver.unarchiveObject(withFile: Character.ArchiveURL.path) as? [Character]
     }
 }
