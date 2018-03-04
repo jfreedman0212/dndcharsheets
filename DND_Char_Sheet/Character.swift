@@ -259,11 +259,28 @@ class Character{
         }
     }
     func IncHitDice(){
-        hit_dice.0 -= 1;
+        if max_hit_dice == hit_dice{
+            max_hit_dice.0 += 1;
+            hit_dice.0 += 1;
+        }
+        else {
+            max_hit_dice.0 += 1;
+        }
+        
     }
     func DecHitDice(){
-        if hit_dice.0 > 0{
-            hit_dice.0 -= 1;
+        if max_hit_dice == hit_dice{
+            if max_hit_dice.0 > 0{
+                max_hit_dice.0 -= 1;
+            }
+            if hit_dice.0 > 0 {
+                hit_dice.0 -= 1;
+            }
+        }
+        else{
+            if max_hit_dice.0 > 0{
+                max_hit_dice.0 -= 1;
+            }
         }
     }
     func UseHitDice(num: Int) -> Int{
