@@ -64,6 +64,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="8O5-5c-bss"/>
                     <connections>
+                        <outlet property="scrollView" destination="qKF-89-HIb" id="1A1-er-PVs"/>
                         <segue destination="tS4-Jn-odl" kind="show" identifier="addCharacter" id="1I5-Zc-vuw"/>
                     </connections>
                 </viewController>
@@ -221,6 +222,12 @@
                         <viewLayoutGuide key="safeArea" id="RWp-q4-yQw"/>
                     </view>
                     <connections>
+                        <outlet property="charismaField" destination="KCC-Wz-Au0" id="74a-2D-rQp"/>
+                        <outlet property="constitutionField" destination="4I8-bE-T59" id="eGC-kg-RUU"/>
+                        <outlet property="dexterityField" destination="qQd-5A-RLo" id="wAh-w2-nPD"/>
+                        <outlet property="intelligenceField" destination="DwX-UB-o09" id="G5k-VO-f5g"/>
+                        <outlet property="strengthField" destination="yov-2p-pUx" id="2T5-9O-Sj0"/>
+                        <outlet property="wisdomField" destination="x49-sZ-c2r" id="Qcr-Gb-gUS"/>
                         <segue destination="hgq-bl-4SM" kind="show" identifier="toMain" id="YE3-GC-ZI1"/>
                     </connections>
                 </viewController>
