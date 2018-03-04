@@ -18,7 +18,9 @@ class MainViewController: UIViewController {
         if loadCharacters() != nil {
             characters = loadCharacters()!
             for char in characters {
-                print(char.GetProperty(a: "name"))
+                // this is where the loading of the buttons will go
+                
+                
             }
         }
 
