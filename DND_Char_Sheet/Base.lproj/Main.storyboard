@@ -221,7 +221,6 @@
                         <viewLayoutGuide key="safeArea" id="RWp-q4-yQw"/>
                     </view>
                     <connections>
-                        <outlet property="addStatsButton" destination="sUz-Yl-8rC" id="l4D-Y3-NG3"/>
                         <segue destination="hgq-bl-4SM" kind="show" identifier="toMain" id="YE3-GC-ZI1"/>
                     </connections>
                 </viewController>
