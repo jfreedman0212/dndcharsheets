@@ -209,6 +209,13 @@ class Character{
         let result = String(hit_dice.0) + "d" + String(hit_dice.1);
         return result;
     }
+    func GetMaxHitDice() -> (Int,Int){
+        return max_hit_dice;
+    }
+    func DisplayMaxHitDice() -> String {
+        let result = String(max_hit_dice.0) + "d" + String(max_hit_dice.1);
+        return result;
+    }
     
     func IncAbility(a: String){
         switch(a){
