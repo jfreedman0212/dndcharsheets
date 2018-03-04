@@ -9,7 +9,7 @@
 import UIKit
 import os.log
 
-// this is for loading
+// this is for loading and storing all of the characters for any given 
 // GLOBAL
 var characters = [Character]()
 
