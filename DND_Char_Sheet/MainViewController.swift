@@ -17,14 +17,6 @@ class MainViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        if loadCharacters() != nil {
-            characters = loadCharacters()!
-            for char in characters {
-                // this is where the loading of the buttons will go
-                
-                
-            }
-        }
 
         // Do any additional setup after loading the view.
         viewWillAppear(false)
