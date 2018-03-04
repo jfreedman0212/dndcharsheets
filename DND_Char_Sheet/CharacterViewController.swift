@@ -116,7 +116,7 @@ class CharacterViewController: UIViewController {
     
     @IBAction func strengthIncrement(_ sender: Any) {
         if currentCharacter.str < 20 {
-            currentCharacter.str += 2
+            currentCharacter.str += 1
             let index = characters.index(of: currentCharacter)
             characters[index!].str = currentCharacter.str
             saveCharacters()
@@ -125,7 +125,7 @@ class CharacterViewController: UIViewController {
     }
     @IBAction func dexterityIncrement(_ sender: Any) {
         if currentCharacter.dex < 20 {
-            currentCharacter.dex += 2
+            currentCharacter.dex += 1
             let index = characters.index(of: currentCharacter)
             characters[index!].dex = currentCharacter.dex
             saveCharacters()
@@ -134,7 +134,7 @@ class CharacterViewController: UIViewController {
     }
     @IBAction func constitutionIncrement(_ sender: Any) {
         if currentCharacter.con < 20 {
-            currentCharacter.con += 2
+            currentCharacter.con += 1
             let index = characters.index(of: currentCharacter)
             characters[index!].con = currentCharacter.con
             saveCharacters()
@@ -143,7 +143,7 @@ class CharacterViewController: UIViewController {
     }
     @IBAction func intelligenceIncrement(_ sender: Any) {
         if currentCharacter.int < 20 {
-            currentCharacter.int += 2
+            currentCharacter.int += 1
             let index = characters.index(of: currentCharacter)
             characters[index!].int = currentCharacter.int
             saveCharacters()
@@ -152,7 +152,7 @@ class CharacterViewController: UIViewController {
     }
     @IBAction func wisdomIncrement(_ sender: Any) {
         if currentCharacter.wis < 20 {
-            currentCharacter.wis += 2
+            currentCharacter.wis += 1
             let index = characters.index(of: currentCharacter)
             characters[index!].wis = currentCharacter.wis
             saveCharacters()
@@ -161,7 +161,7 @@ class CharacterViewController: UIViewController {
     }
     @IBAction func charismaIncrement(_ sender: Any) {
         if currentCharacter.cha < 20 {
-            currentCharacter.cha += 2
+            currentCharacter.cha += 1
             let index = characters.index(of: currentCharacter)
             characters[index!].cha =  currentCharacter.cha
             saveCharacters()
