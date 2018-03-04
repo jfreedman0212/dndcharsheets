@@ -26,7 +26,7 @@ struct PropertyKey {
 class Character{
     var str,dex,con,int,wis,cha: Int;
     var clss,race,name: String;
-    var hit_dice: (Int,Int);
+    var hit_dice,max_hit_dice: (Int,Int);
     
     init(s: Int,d: Int,c: Int,i: Int,w: Int,ch: Int,cl: String,r: String,n: String,extra: String = "",extra2: String = "") {
         str=s;dex=d;con=c;int=i;wis=w;cha=ch;
@@ -122,7 +122,7 @@ class Character{
         else{
             hit_dice=(1,10);
         }
-        
+        max_hit_dice = hit_dice;
     }
     
     func GetAbility(a: String) -> Int{
@@ -260,6 +260,12 @@ class Character{
         if hit_dice.0 > 0{
             hit_dice.0 -= 1;
         }
+    }
+    func UseHitDice(num: Int) -> Int{
+        return Roll(dice:(num,hit_dice.1));
+    }
+    func RefreshHitDice(){
+        hit_dice = max_hit_dice;
     }
 }
 
