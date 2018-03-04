@@ -8,7 +8,6 @@
 
 import Foundation
 import UIKit
-import Dice
 
 // MARK: Types
 struct PropertyKey {
