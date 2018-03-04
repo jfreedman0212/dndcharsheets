@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import os.log
 
 class CharacterAddViewController: UIViewController{
     
@@ -16,6 +17,9 @@ class CharacterAddViewController: UIViewController{
     
     let classes = ["Barbarian", "Bard", "Cleric", "Druid", "Fighter", "Monk", "Paladin", "Ranger", "Rogue", "Sorcerer", "Warlock", "Wizard"]
     let races = ["Hill Darf", "Mountain Dwarf", "High Elf", "Dark Elf", "Lightfoot Halfling", "Human", "Dragonborn", "Forest Gnome", "Rock Gnome", "Half-Elf", "Half-Orc", "Tiefling"]
+    
+    // this is for loading
+    var characters = [Character]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -74,7 +78,22 @@ class CharacterAddViewController: UIViewController{
         self.view.endEditing(true)
     }
     
-
+    // MARK: adding save/load functionality
+    
+    private func saveCharacters() {
+        let isSuccessfulSave = NSKeyedArchiver.archiveRootObject(characters, toFile: Character.ArchiveURL.path)
+        if isSuccessfulSave {
+            os_log("Characters successfully saved.", log: OSLog.default, type: .debug)
+        } else {
+            os_log("Failed to save characters...", log: OSLog.default, type: .error)
+        }
+    }
+    
+    private func loadCharacters() -> [Character]?  {
+        return NSKeyedUnarchiver.unarchiveObject(withFile: Character.ArchiveURL.path) as? [Character]
+    }
+    
+    
     
     /*
     // MARK: - Navigation
