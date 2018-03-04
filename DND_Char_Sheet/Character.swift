@@ -18,6 +18,9 @@ struct PropertyKey {
     static let dex = "dex"
     static let con = "con"
     static let int = "int"
+    static let wis = "wis"
+    static let cha = "cha"
+    
 }
 
 // Character class for holding character data
