@@ -31,12 +31,19 @@ class MainViewController: UIViewController {
         }
     
     override func viewDidAppear(_ animated: Bool) {
-        let xConst = 41.0
+        let xConst = 100.0
         let yInit = 94.0
         scrollView.contentSize = CGSize(width: 294, height: 444 + ((Double(characters.count) - 8) * 55.5))
         if characters.count > 0 {
             for index in 0...characters.count - 1 {
-                let button = UIButton(frame: CGRect(x: xConst, y: yInit + (Double(index) * 55.5), width: 294.0, height: 55.5))
+                let yLocation = yInit + (Double(index) * 55.5)
+                let button = UIButton(frame: CGRect(x: xConst, y: yLocation, width: 97.0, height: 55.5))
+                button.setTitle(characters[index].GetProperty(a: "name"), for: .normal)
+                button.setTitleColor(UIColor.black, for: .normal)
+                button.setTitleColor(UIColor.black, for: .highlighted)
+                button.titleLabel?.font = UIFont(name: "Dungeon", size: 34)
+                button.backgroundColor = .clear
+                button.contentHorizontalAlignment = UIControlContentHorizontalAlignment.center
                 scrollView.addSubview(button)
             }
         }
