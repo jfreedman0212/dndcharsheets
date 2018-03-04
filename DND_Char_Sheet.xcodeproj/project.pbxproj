@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		132340C9204C05B300767A3D /* CharacterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 132340C8204C05B300767A3D /* CharacterViewController.swift */; };
+		132340CB204C070C00767A3D /* dice.png in Resources */ = {isa = PBXBuildFile; fileRef = 132340CA204C070C00767A3D /* dice.png */; };
+		132340D0204C0F0B00767A3D /* plusIcon1.png in Resources */ = {isa = PBXBuildFile; fileRef = 132340CE204C0F0B00767A3D /* plusIcon1.png */; };
+		132340D1204C0F0B00767A3D /* minusIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = 132340CF204C0F0B00767A3D /* minusIcon.png */; };
 		13F4B267204B5B7900252B06 /* DUNGRG__.TTF in Resources */ = {isa = PBXBuildFile; fileRef = 13F4B266204B5B7900252B06 /* DUNGRG__.TTF */; };
 		13F4B26D204B5F6100252B06 /* plusIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = 13F4B26C204B5F6100252B06 /* plusIcon.png */; };
 		13F4B26F204B6BB200252B06 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13F4B26E204B6BB200252B06 /* MainViewController.swift */; };
@@ -21,6 +25,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		132340C8204C05B300767A3D /* CharacterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterViewController.swift; sourceTree = "<group>"; };
+		132340CA204C070C00767A3D /* dice.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = dice.png; sourceTree = "<group>"; };
+		132340CE204C0F0B00767A3D /* plusIcon1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = plusIcon1.png; sourceTree = "<group>"; };
+		132340CF204C0F0B00767A3D /* minusIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = minusIcon.png; sourceTree = "<group>"; };
 		13F4B266204B5B7900252B06 /* DUNGRG__.TTF */ = {isa = PBXFileReference; lastKnownFileType = file; path = DUNGRG__.TTF; sourceTree = "<group>"; };
 		13F4B26C204B5F6100252B06 /* plusIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = plusIcon.png; sourceTree = "<group>"; };
 		13F4B26E204B6BB200252B06 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
@@ -66,12 +74,16 @@
 		7523339E204B4AC0006B7572 /* DND_Char_Sheet */ = {
 			isa = PBXGroup;
 			children = (
+				132340CF204C0F0B00767A3D /* minusIcon.png */,
+				132340CE204C0F0B00767A3D /* plusIcon1.png */,
+				132340CA204C070C00767A3D /* dice.png */,
 				13F4B26C204B5F6100252B06 /* plusIcon.png */,
 				13F4B266204B5B7900252B06 /* DUNGRG__.TTF */,
 				7523339F204B4AC0006B7572 /* AppDelegate.swift */,
 				13F4B26E204B6BB200252B06 /* MainViewController.swift */,
 				13F4B270204B705300252B06 /* CharacterAddViewController.swift */,
 				13F4B272204BD5D700252B06 /* StatsViewController.swift */,
+				132340C8204C05B300767A3D /* CharacterViewController.swift */,
 				752333A3204B4AC1006B7572 /* Main.storyboard */,
 				752333A9204B4AC1006B7572 /* Assets.xcassets */,
 				752333AB204B4AC1006B7572 /* LaunchScreen.storyboard */,
@@ -142,8 +154,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				752333AD204B4AC1006B7572 /* LaunchScreen.storyboard in Resources */,
+				132340D0204C0F0B00767A3D /* plusIcon1.png in Resources */,
 				13F4B267204B5B7900252B06 /* DUNGRG__.TTF in Resources */,
+				132340CB204C070C00767A3D /* dice.png in Resources */,
 				752333AA204B4AC1006B7572 /* Assets.xcassets in Resources */,
+				132340D1204C0F0B00767A3D /* minusIcon.png in Resources */,
 				752333A5204B4AC1006B7572 /* Main.storyboard in Resources */,
 				13F4B26D204B5F6100252B06 /* plusIcon.png in Resources */,
 			);
@@ -158,6 +173,7 @@
 			files = (
 				D0941B06204B58FD0051C625 /* Dice.swift in Sources */,
 				752333A0204B4AC0006B7572 /* AppDelegate.swift in Sources */,
+				132340C9204C05B300767A3D /* CharacterViewController.swift in Sources */,
 				D0941B04204B4F300051C625 /* Character.swift in Sources */,
 				13F4B273204BD5D700252B06 /* StatsViewController.swift in Sources */,
 				13F4B271204B705300252B06 /* CharacterAddViewController.swift in Sources */,
