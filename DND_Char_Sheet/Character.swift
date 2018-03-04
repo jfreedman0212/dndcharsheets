@@ -9,10 +9,25 @@
 import Foundation
 import UIKit
 
+// MARK: Types
+struct PropertyKey {
+    static let name = "name"
+    static let clss = "clss"
+    static let race = "race"
+    static let str = "str"
+    static let dex = "dex"
+    static let con = "con"
+    static let int = "int"
+    static let wis = "wis"
+    static let cha = "cha"
+    
+}
+
+// Character class for holding character data
 class Character{
     var str,dex,con,int,wis,cha: Int;
     var clss,race,name: String;
-    var hit_dice: (Int,Int);
+    var hit_dice,max_hit_dice: (Int,Int);
     
     init(s: Int,d: Int,c: Int,i: Int,w: Int,ch: Int,cl: String,r: String,n: String,extra: String = "",extra2: String = "") {
         str=s;dex=d;con=c;int=i;wis=w;cha=ch;
@@ -108,7 +123,7 @@ class Character{
         else{
             hit_dice=(1,10);
         }
-        
+        max_hit_dice = hit_dice;
     }
     
     func GetAbility(a: String) -> Int{
@@ -190,6 +205,17 @@ class Character{
     func GetHitDice() -> (Int,Int){
         return hit_dice;
     }
+    func DisplayHitDice() -> String {
+        let result = String(hit_dice.0) + "d" + String(hit_dice.1);
+        return result;
+    }
+    func GetMaxHitDice() -> (Int,Int){
+        return max_hit_dice;
+    }
+    func DisplayMaxHitDice() -> String {
+        let result = String(max_hit_dice.0) + "d" + String(max_hit_dice.1);
+        return result;
+    }
     
     func IncAbility(a: String){
         switch(a){
@@ -238,6 +264,39 @@ class Character{
             str-=1;
             break
         }
+    }
+    func IncHitDice(){
+        if max_hit_dice == hit_dice{
+            max_hit_dice.0 += 1;
+            hit_dice.0 += 1;
+        }
+        else {
+            max_hit_dice.0 += 1;
+        }
+        
+    }
+    func DecHitDice(){
+        if max_hit_dice == hit_dice{
+            if max_hit_dice.0 > 0{
+                max_hit_dice.0 -= 1;
+            }
+            if hit_dice.0 > 0 {
+                hit_dice.0 -= 1;
+            }
+        }
+        else{
+            if max_hit_dice.0 > 0{
+                max_hit_dice.0 -= 1;
+            }
+        }
+    }
+    func UseHitDice(num: Int) -> Int{
+        let temp_dice = hit_dice;
+        hit_dice.0 -= num;
+        return Roll(dice:(num,temp_dice.1));
+    }
+    func RefreshHitDice(){
+        hit_dice = max_hit_dice;
     }
 }
 
