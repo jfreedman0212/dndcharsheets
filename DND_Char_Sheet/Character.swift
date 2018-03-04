@@ -190,6 +190,55 @@ class Character{
     func GetHitDice() -> (Int,Int){
         return hit_dice;
     }
+    
+    func IncAbility(a: String){
+        switch(a){
+        case "Strength":
+            str+=1;
+        case "Dexterity":
+            dex+=1;
+            break
+        case "Constitution":
+            con+=1;
+            break
+        case "Intelligence":
+            int+=1;
+            break
+        case "Wisdom":
+            wis+=1;
+            break
+        case "Charisma":
+            cha+=1;
+            break
+        default:
+            str+=1;
+            break
+        }
+    }
+    func DecAbility(a: String){
+        switch(a){
+        case "Strength":
+            str-=1;
+        case "Dexterity":
+            dex-=1;
+            break
+        case "Constitution":
+            con-=1;
+            break
+        case "Intelligence":
+            int-=1;
+            break
+        case "Wisdom":
+            wis-=1;
+            break
+        case "Charisma":
+            cha-=1;
+            break
+        default:
+            str-=1;
+            break
+        }
+    }
 }
 
 
