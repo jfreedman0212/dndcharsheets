@@ -8,9 +8,6 @@
 
 import UIKit
 
-// global variable that stores the current character
-var currentCharacter: Character!
-
 class MainViewController: UIViewController {
     
     //GetProperty(String: a)

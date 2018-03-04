@@ -9,21 +9,6 @@
 import UIKit
 import os.log
 
-// this is the characterToBeAdded struct
-
-struct charToBeAdded{
-    var name: String?
-    var clss: String?
-    var race: String?
-    var str: Int?
-    var dex: Int?
-    var con: Int?
-    var wis: Int?
-    var cha: Int?
-    var int: Int?
-}
-
-var CharToBeAdded = charToBeAdded()
 
 class CharacterAddViewController: UIViewController{
     
