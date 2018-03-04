@@ -8,23 +8,10 @@
 
 import Foundation
 import UIKit
-
-// MARK: Types
-struct PropertyKey {
-    static let name = "name"
-    static let clss = "clss"
-    static let race = "race"
-    static let str = "str"
-    static let dex = "dex"
-    static let con = "con"
-    static let int = "int"
-    static let wis = "wis"
-    static let cha = "cha"
-    
-}
+import os.log
 
 // Character class for holding character data
-class Character{
+class Character: NSObject,NSCoding{
     var str,dex,con,int,wis,cha: Int;
     var clss,race,name: String;
     var hit_dice,max_hit_dice: (Int,Int);
@@ -206,14 +193,14 @@ class Character{
         return hit_dice;
     }
     func DisplayHitDice() -> String {
-        let result = String(hit_dice.0) + "d" + String(hit_dice.1);
+        let result = "\(hit_dice.0)d\(hit_dice.1)";
         return result;
     }
     func GetMaxHitDice() -> (Int,Int){
         return max_hit_dice;
     }
     func DisplayMaxHitDice() -> String {
-        let result = String(max_hit_dice.0) + "d" + String(max_hit_dice.1);
+        let result = "\(max_hit_dice.0)d\(max_hit_dice.1)";
         return result;
     }
     
@@ -221,6 +208,7 @@ class Character{
         switch(a){
         case "Strength":
             str+=1;
+            break
         case "Dexterity":
             dex+=1;
             break
@@ -245,6 +233,7 @@ class Character{
         switch(a){
         case "Strength":
             str-=1;
+            break
         case "Dexterity":
             dex-=1;
             break
@@ -273,7 +262,6 @@ class Character{
         else {
             max_hit_dice.0 += 1;
         }
-        
     }
     func DecHitDice(){
         if max_hit_dice == hit_dice{
@@ -298,6 +286,58 @@ class Character{
     func RefreshHitDice(){
         hit_dice = max_hit_dice;
     }
+    
+    // MARK: Types
+    struct PropertyKey {
+        static let name = "name"
+        static let clss = "clss"
+        static let race = "race"
+        static let str = "str"
+        static let dex = "dex"
+        static let con = "con"
+        static let int = "int"
+        static let wis = "wis"
+        static let cha = "cha"
+        static let hit_dice = "hit_dice"
+        static let max_hit_dice = "max_hit_dice"
+    }
+    
+    // MARK: NSCoding stuff
+    func encode(with aCoder: NSCoder)
+    {
+        aCoder.encode(name, forKey: PropertyKey.name)
+        aCoder.encode(clss, forKey: PropertyKey.clss)
+        aCoder.encode(race, forKey: PropertyKey.race)
+        aCoder.encode(str, forKey: PropertyKey.str)
+        aCoder.encode(dex, forKey: PropertyKey.dex)
+        aCoder.encode(con, forKey: PropertyKey.con)
+        aCoder.encode(int, forKey: PropertyKey.int)
+        aCoder.encode(wis, forKey: PropertyKey.wis)
+        aCoder.encode(cha, forKey: PropertyKey.cha)
+    }
+    
+    required convenience init?(coder aDecoder: NSCoder)
+    {
+        guard let n = aDecoder.decodeObject(forKey: PropertyKey.name) as? String else {
+            os_log("Unable to decode the name for a Character object.", log: OSLog.default, type: .debug)
+            return nil
+        }
+        
+        // initializing the rest of the member variables
+        let clss = aDecoder.decodeObject(forKey: PropertyKey.clss)
+        let race = aDecoder.decodeObject(forKey: PropertyKey.race)
+        let str = aDecoder.decodeInteger(forKey: PropertyKey.str)
+        let dex = aDecoder.decodeInteger(forKey: PropertyKey.dex)
+        let con = aDecoder.decodeInteger(forKey: PropertyKey.con)
+        let int = aDecoder.decodeInteger(forKey: PropertyKey.int)
+        let cha = aDecoder.decodeInteger(forKey: PropertyKey.cha)
+        let wis = aDecoder.decodeInteger(forKey: PropertyKey.wis)
+        
+        
+        self.init(s: str , d: dex , c: con , i: int , w: wis, ch: cha, cl: clss as! String, r: race as! String, n: n)
+    }
+    
+    // MARK: Archiving Paths
+    static let DocumentsDirectory = FileManager().urls(for: .documentDirectory, in: .userDomainMask).first!
+    static let ArchiveURL = DocumentsDirectory.appendingPathComponent("saved_characters")
 }
-
-
