@@ -9,6 +9,18 @@
 import Foundation
 import UIKit
 
+// MARK: Types
+struct PropertyKey {
+    static let name = "name"
+    static let clss = "clss"
+    static let race = "race"
+    static let str = "str"
+    static let dex = "dex"
+    static let con = "con"
+    static let int = "int"
+}
+
+// Character class for holding character data
 class Character{
     var str,dex,con,int,wis,cha: Int;
     var clss,race,name: String;
