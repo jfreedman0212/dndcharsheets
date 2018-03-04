@@ -10,11 +10,16 @@ import UIKit
 
 class MainViewController: UIViewController {
     
+    @IBOutlet weak var scrollView: UIScrollView!
+    var characters: [String] = [String]()
+    var characterButtons = [UIButton]()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
         viewWillAppear(false)
+
     }
 
     override func didReceiveMemoryWarning() {
