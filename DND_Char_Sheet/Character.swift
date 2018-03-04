@@ -205,6 +205,10 @@ class Character{
     func GetHitDice() -> (Int,Int){
         return hit_dice;
     }
+    func DisplayHitDice() -> String {
+        let result = String(hit_dice.0) + "d" + String(hit_dice.1);
+        return result;
+    }
     
     func IncAbility(a: String){
         switch(a){
