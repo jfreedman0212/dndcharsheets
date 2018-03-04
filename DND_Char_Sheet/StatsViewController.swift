@@ -14,6 +14,13 @@ class StatsViewController: UIViewController {
     // this is for loading
     var characters = [Character]()
     
+    @IBOutlet weak var strengthField: UITextField!
+    @IBOutlet weak var dexterityField: UITextField!
+    @IBOutlet weak var constitutionField: UITextField!
+    @IBOutlet weak var intelligenceField: UITextField!
+    @IBOutlet weak var wisdomField: UITextField!
+    @IBOutlet weak var charismaField: UITextField!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
