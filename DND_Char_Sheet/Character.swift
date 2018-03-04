@@ -25,10 +25,8 @@ class Character{
     var str,dex,con,int,wis,cha: Int;
     var clss,race,name: String;
     var hit_dice: (Int,Int);
-    var lvl: Int;
     
-    init(s: Int,d: Int,c: Int,i: Int,w: Int,ch: Int,cl: String,r: String,n: String, extra: String = "",extra2: String = "") {
-        lvl=1;
+    init(s: Int,d: Int,c: Int,i: Int,w: Int,ch: Int,cl: String,r: String,n: String,extra: String = "",extra2: String = "") {
         str=s;dex=d;con=c;int=i;wis=w;cha=ch;
         clss = cl; race = r;name = n;
         switch(r){
@@ -204,9 +202,6 @@ class Character{
     func GetHitDice() -> (Int,Int){
         return hit_dice;
     }
-    func GetLevel() -> Int{
-        return lvl;
-    }
     
     func IncAbility(a: String){
         switch(a){
@@ -256,13 +251,13 @@ class Character{
             break
         }
     }
-    func IncLevel(){
-        lvl+=1;
-        hit_dice=(lvl,hit_dice.1);
+    func IncHitDice(){
+        hit_dice.0 -= 1;
     }
-    func DecLevel(){
-        lvl-=1;
-        hit_dice=(lvl,hit_dice.1);
+    func DecHitDice(){
+        if hit_dice.0 > 0{
+            hit_dice.0 -= 1;
+        }
     }
 }
 
