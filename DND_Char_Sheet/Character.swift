@@ -8,23 +8,10 @@
 
 import Foundation
 import UIKit
-
-// MARK: Types
-struct PropertyKey {
-    static let name = "name"
-    static let clss = "clss"
-    static let race = "race"
-    static let str = "str"
-    static let dex = "dex"
-    static let con = "con"
-    static let int = "int"
-    static let wis = "wis"
-    static let cha = "cha"
-    
-}
+import os.log
 
 // Character class for holding character data
-class Character{
+class Character: NSObject,NSCoding{
     var str,dex,con,int,wis,cha: Int;
     var clss,race,name: String;
     var hit_dice,max_hit_dice: (Int,Int);
@@ -267,6 +254,59 @@ class Character{
     }
     func RefreshHitDice(){
         hit_dice = max_hit_dice;
+    }
+    
+    // MARK: Types
+    struct PropertyKey {
+        static let name = "name"
+        static let clss = "clss"
+        static let race = "race"
+        static let str = "str"
+        static let dex = "dex"
+        static let con = "con"
+        static let int = "int"
+        static let wis = "wis"
+        static let cha = "cha"
+        static let hit_dice = "hit_dice"
+        static let max_hit_dice = "max_hit_dice"
+    }
+    
+    // MARK: NSCoding
+    func encode(with aCoder: NSCoder)
+    {
+        aCoder.encode(name, forKey: PropertyKey.name)
+        aCoder.encode(clss, forKey: PropertyKey.clss)
+        aCoder.encode(race, forKey: PropertyKey.race)
+        aCoder.encode(str, forKey: PropertyKey.str)
+        aCoder.encode(dex, forKey: PropertyKey.dex)
+        aCoder.encode(con, forKey: PropertyKey.con)
+        aCoder.encode(int, forKey: PropertyKey.int)
+        aCoder.encode(wis, forKey: PropertyKey.wis)
+        aCoder.encode(cha, forKey: PropertyKey.cha)
+        aCoder.encode(hit_dice, forKey: PropertyKey.hit_dice)
+        aCoder.encode(max_hit_dice, forKey: PropertyKey.max_hit_dice)
+    }
+    
+    required convenience init?(coder aDecoder: NSCoder)
+    {
+        guard let n = aDecoder.decodeObject(forKey: PropertyKey.name) as? String else {
+            os_log("Unable to decode the name for a Character object.", log: OSLog.default, type: .debug)
+            return nil
+        }
+        
+        // initializing the rest of the member variables
+        let clss = aDecoder.decodeObject(forKey: PropertyKey.clss)
+        let race = aDecoder.decodeObject(forKey: PropertyKey.race)
+        let str = aDecoder.decodeObject(forKey: PropertyKey.str)
+        let dex = aDecoder.decodeObject(forKey: PropertyKey.dex)
+        let con = aDecoder.decodeObject(forKey: PropertyKey.con)
+        let int = aDecoder.decodeObject(forKey: PropertyKey.int)
+        let cha = aDecoder.decodeObject(forKey: PropertyKey.cha)
+        let wis = aDecoder.decodeObject(forKey: PropertyKey.wis)
+        //let hit_dice = aDecoder.decode
+        
+        // this does not work yet, will be fixed soon
+        self.init()
     }
 }
 
