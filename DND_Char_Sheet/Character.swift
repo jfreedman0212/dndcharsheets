@@ -221,6 +221,7 @@ class Character{
         switch(a){
         case "Strength":
             str+=1;
+            break
         case "Dexterity":
             dex+=1;
             break
@@ -245,6 +246,7 @@ class Character{
         switch(a){
         case "Strength":
             str-=1;
+            break
         case "Dexterity":
             dex-=1;
             break
@@ -296,6 +298,10 @@ class Character{
     }
     func RefreshHitDice(){
         hit_dice = max_hit_dice;
+    }
+    
+    func AbilityCheck(a: String,adv: Bool = false,disadv: Bool = false) -> Int{
+        return Roll(dice:(1,20),mod:GetModifier(a:a),adv:adv,disadv:disadv);
     }
 }
 
