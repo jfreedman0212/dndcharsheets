@@ -260,7 +260,9 @@ class Character{
         }
     }
     func UseHitDice(num: Int) -> Int{
-        return Roll(dice:(num,hit_dice.1));
+        let temp_dice = hit_dice;
+        hit_dice.0 -= num;
+        return Roll(dice:(num,temp_dice.1));
     }
     func RefreshHitDice(){
         hit_dice = max_hit_dice;
