@@ -302,7 +302,7 @@ class Character: NSObject,NSCoding{
         static let max_hit_dice = "max_hit_dice"
     }
     
-    // MARK: NSCoding
+    // MARK: NSCoding stuff
     func encode(with aCoder: NSCoder)
     {
         aCoder.encode(name, forKey: PropertyKey.name)
@@ -314,8 +314,6 @@ class Character: NSObject,NSCoding{
         aCoder.encode(int, forKey: PropertyKey.int)
         aCoder.encode(wis, forKey: PropertyKey.wis)
         aCoder.encode(cha, forKey: PropertyKey.cha)
-        aCoder.encode(hit_dice, forKey: PropertyKey.hit_dice)
-        aCoder.encode(max_hit_dice, forKey: PropertyKey.max_hit_dice)
     }
     
     required convenience init?(coder aDecoder: NSCoder)
@@ -328,17 +326,20 @@ class Character: NSObject,NSCoding{
         // initializing the rest of the member variables
         let clss = aDecoder.decodeObject(forKey: PropertyKey.clss)
         let race = aDecoder.decodeObject(forKey: PropertyKey.race)
-        let str = aDecoder.decodeObject(forKey: PropertyKey.str)
-        let dex = aDecoder.decodeObject(forKey: PropertyKey.dex)
-        let con = aDecoder.decodeObject(forKey: PropertyKey.con)
-        let int = aDecoder.decodeObject(forKey: PropertyKey.int)
-        let cha = aDecoder.decodeObject(forKey: PropertyKey.cha)
-        let wis = aDecoder.decodeObject(forKey: PropertyKey.wis)
-        //let hit_dice = aDecoder.decode
+        let str = aDecoder.decodeInteger(forKey: PropertyKey.str)
+        let dex = aDecoder.decodeInteger(forKey: PropertyKey.dex)
+        let con = aDecoder.decodeInteger(forKey: PropertyKey.con)
+        let int = aDecoder.decodeInteger(forKey: PropertyKey.int)
+        let cha = aDecoder.decodeInteger(forKey: PropertyKey.cha)
+        let wis = aDecoder.decodeInteger(forKey: PropertyKey.wis)
         
-        // this does not work yet, will be fixed soon
-        self.init()
+        
+        self.init(s: str , d: dex , c: con , i: int , w: wis, ch: cha, cl: clss as! String, r: race as! String, n: n)
     }
+    
+    // MARK: Archiving Paths
+    static let DocumentsDirectory = FileManager().urls(for: .documentDirectory, in: .userDomainMask).first!
+    static let ArchiveURL = DocumentsDirectory.appendingPathComponent("saved_characters")
 }
 
 
