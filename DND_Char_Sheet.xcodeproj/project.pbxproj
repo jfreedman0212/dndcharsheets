@@ -8,7 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		13F4B267204B5B7900252B06 /* DUNGRG__.TTF in Resources */ = {isa = PBXBuildFile; fileRef = 13F4B266204B5B7900252B06 /* DUNGRG__.TTF */; };
-		13F4B26D204B5F6100252B06 /* icons8-plus-math-50.png in Resources */ = {isa = PBXBuildFile; fileRef = 13F4B26C204B5F6100252B06 /* icons8-plus-math-50.png */; };
+		13F4B26D204B5F6100252B06 /* plusIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = 13F4B26C204B5F6100252B06 /* plusIcon.png */; };
+		13F4B26F204B6BB200252B06 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13F4B26E204B6BB200252B06 /* MainViewController.swift */; };
+		13F4B271204B705300252B06 /* CharacterAddViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13F4B270204B705300252B06 /* CharacterAddViewController.swift */; };
 		752333A0204B4AC0006B7572 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7523339F204B4AC0006B7572 /* AppDelegate.swift */; };
 		752333A2204B4AC1006B7572 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 752333A1204B4AC1006B7572 /* ViewController.swift */; };
 		752333A5204B4AC1006B7572 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 752333A3204B4AC1006B7572 /* Main.storyboard */; };
@@ -20,7 +22,9 @@
 
 /* Begin PBXFileReference section */
 		13F4B266204B5B7900252B06 /* DUNGRG__.TTF */ = {isa = PBXFileReference; lastKnownFileType = file; path = DUNGRG__.TTF; sourceTree = "<group>"; };
-		13F4B26C204B5F6100252B06 /* icons8-plus-math-50.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icons8-plus-math-50.png"; sourceTree = "<group>"; };
+		13F4B26C204B5F6100252B06 /* plusIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = plusIcon.png; sourceTree = "<group>"; };
+		13F4B26E204B6BB200252B06 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		13F4B270204B705300252B06 /* CharacterAddViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterAddViewController.swift; sourceTree = "<group>"; };
 		7523339C204B4AC0006B7572 /* DND_Char_Sheet.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DND_Char_Sheet.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7523339F204B4AC0006B7572 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		752333A1204B4AC1006B7572 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -62,10 +66,12 @@
 		7523339E204B4AC0006B7572 /* DND_Char_Sheet */ = {
 			isa = PBXGroup;
 			children = (
-				13F4B26C204B5F6100252B06 /* icons8-plus-math-50.png */,
+				13F4B26C204B5F6100252B06 /* plusIcon.png */,
 				13F4B266204B5B7900252B06 /* DUNGRG__.TTF */,
 				7523339F204B4AC0006B7572 /* AppDelegate.swift */,
 				752333A1204B4AC1006B7572 /* ViewController.swift */,
+				13F4B26E204B6BB200252B06 /* MainViewController.swift */,
+				13F4B270204B705300252B06 /* CharacterAddViewController.swift */,
 				752333A3204B4AC1006B7572 /* Main.storyboard */,
 				752333A9204B4AC1006B7572 /* Assets.xcassets */,
 				752333AB204B4AC1006B7572 /* LaunchScreen.storyboard */,
@@ -139,7 +145,7 @@
 				13F4B267204B5B7900252B06 /* DUNGRG__.TTF in Resources */,
 				752333AA204B4AC1006B7572 /* Assets.xcassets in Resources */,
 				752333A5204B4AC1006B7572 /* Main.storyboard in Resources */,
-				13F4B26D204B5F6100252B06 /* icons8-plus-math-50.png in Resources */,
+				13F4B26D204B5F6100252B06 /* plusIcon.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -154,6 +160,8 @@
 				D0941B06204B58FD0051C625 /* Dice.swift in Sources */,
 				752333A0204B4AC0006B7572 /* AppDelegate.swift in Sources */,
 				D0941B04204B4F300051C625 /* Character.swift in Sources */,
+				13F4B271204B705300252B06 /* CharacterAddViewController.swift in Sources */,
+				13F4B26F204B6BB200252B06 /* MainViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
