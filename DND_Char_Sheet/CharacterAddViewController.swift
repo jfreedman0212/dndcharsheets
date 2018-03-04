@@ -9,6 +9,22 @@
 import UIKit
 import os.log
 
+// this is the characterToBeAdded struct
+
+struct charToBeAdded{
+    var name: String?
+    var clss: String?
+    var race: String?
+    var str: Int?
+    var dex: Int?
+    var con: Int?
+    var wis: Int?
+    var cha: Int?
+    var int: Int?
+}
+
+var CharToBeAdded = charToBeAdded()
+
 class CharacterAddViewController: UIViewController{
     
     @IBOutlet weak var nameField: UITextField!
@@ -17,9 +33,6 @@ class CharacterAddViewController: UIViewController{
     
     let classes = ["Barbarian", "Bard", "Cleric", "Druid", "Fighter", "Monk", "Paladin", "Ranger", "Rogue", "Sorcerer", "Warlock", "Wizard"]
     let races = ["Hill Darf", "Mountain Dwarf", "High Elf", "Dark Elf", "Lightfoot Halfling", "Human", "Dragonborn", "Forest Gnome", "Rock Gnome", "Half-Elf", "Half-Orc", "Tiefling"]
-    
-    // this is for loading
-    var characters = [Character]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -66,6 +79,9 @@ class CharacterAddViewController: UIViewController{
             }
         }
         if classExists && raceExists {
+            CharToBeAdded.name = characterName
+            CharToBeAdded.clss = characterClass
+            CharToBeAdded.race = characterRace
             self.performSegue(withIdentifier: "makeStats", sender: nil)
         }
         else {
@@ -77,23 +93,6 @@ class CharacterAddViewController: UIViewController{
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         self.view.endEditing(true)
     }
-    
-    // MARK: adding save/load functionality
-    
-    private func saveCharacters() {
-        let isSuccessfulSave = NSKeyedArchiver.archiveRootObject(characters, toFile: Character.ArchiveURL.path)
-        if isSuccessfulSave {
-            os_log("Characters successfully saved.", log: OSLog.default, type: .debug)
-        } else {
-            os_log("Failed to save characters...", log: OSLog.default, type: .error)
-        }
-    }
-    
-    private func loadCharacters() -> [Character]?  {
-        return NSKeyedUnarchiver.unarchiveObject(withFile: Character.ArchiveURL.path) as? [Character]
-    }
-    
-    
     
     /*
     // MARK: - Navigation

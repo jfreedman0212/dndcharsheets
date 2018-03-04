@@ -7,8 +7,12 @@
 //
 
 import UIKit
+import os.log
 
 class StatsViewController: UIViewController {
+    
+    // this is for loading
+    var characters = [Character]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -27,10 +31,36 @@ class StatsViewController: UIViewController {
     }
     
     @IBAction func makeStatsPressed(_ sender: Any) {
+        // run the save functionality for the newly created character
+        // ALSO this does not do much error checking, so later, please fix this
+        /*CharToBeAdded.str =
+        CharToBeAdded.int =
+        CharToBeAdded.cha =
+        CharToBeAdded.con =
+        CharToBeAdded.wis =
+        CharToBeAdded.dex =
+        */
+        
         performSegue(withIdentifier: "toMain", sender: nil)
     }
 
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         self.view.endEditing(true)
+    }
+    
+    
+    // MARK: adding save/load functionality
+    
+    private func saveCharacters() {
+        let isSuccessfulSave = NSKeyedArchiver.archiveRootObject(characters, toFile: Character.ArchiveURL.path)
+        if isSuccessfulSave {
+            os_log("Characters successfully saved.", log: OSLog.default, type: .debug)
+        } else {
+            os_log("Failed to save characters...", log: OSLog.default, type: .error)
+        }
+    }
+    
+    private func loadCharacters() -> [Character]?  {
+        return NSKeyedUnarchiver.unarchiveObject(withFile: Character.ArchiveURL.path) as? [Character]
     }
 }
