@@ -17,7 +17,7 @@ class CharacterAddViewController: UIViewController{
     @IBOutlet weak var raceField: UITextField!
     
     let classes = ["Barbarian", "Bard", "Cleric", "Druid", "Fighter", "Monk", "Paladin", "Ranger", "Rogue", "Sorcerer", "Warlock", "Wizard"]
-    let races = ["Hill Darf", "Mountain Dwarf", "High Elf", "Dark Elf", "Lightfoot Halfling", "Human", "Dragonborn", "Forest Gnome", "Rock Gnome", "Half-Elf", "Half-Orc", "Tiefling"]
+    let races = ["Hill Dwarf", "Mountain Dwarf", "High Elf", "Dark Elf", "Lightfoot Halfling", "Human", "Dragonborn", "Forest Gnome", "Rock Gnome", "Half-Elf", "Half-Orc", "Tiefling"]
     
     override func viewDidLoad() {
         super.viewDidLoad()
