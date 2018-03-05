@@ -19,86 +19,10 @@ class Character: NSObject,NSCoding{
     init(s: Int,d: Int,c: Int,i: Int,w: Int,ch: Int,cl: String,r: String,n: String,extra: String = "",extra2: String = "") {
         str=s;dex=d;con=c;int=i;wis=w;cha=ch;
         clss = cl; race = r;name = n;
-        switch(r){
-        case "Hill Dwarf":
-            con+=2;wis+=1;
-            break
-        case "Mountain Dwarf":
-            con+=2;str+=2;
-            break
-        case "High Elf":
-            dex+=2;int+=1;
-            break
-        case "Dark Elf":
-            dex+=2;cha+=1;
-            break
-        case "Lightfoot Halfling":
-            dex+=2;cha+=1;
-            break
-        case "Stout Halfling":
-            dex+=2;con+=1;
-            break
-        case "Human":
-            str+=1;dex+=1;con+=1;int+=1;wis+=1;cha+=1;
-            break
-        case "Dragonborn":
-            str+=2;cha+=1;
-            break
-        case "Forest Gnome":
-            int+=2;dex+=1;
-            break
-        case "Rock Gnome":
-            int+=2;con+=1;
-            break
-        case "Half-Elf":
-            cha+=2;
-            if extra != "" && extra2 != "" {
-                switch extra{
-                case "Strength":
-                    str+=1;
-                    break
-                case "Dexterity":
-                    dex+=1;break
-                case "Constitution":
-                    con+=1;break
-                case "Intelligence":
-                    int+=1;break
-                case "Wisdom":
-                    wis+=1;break
-                case "Charisma":
-                    cha+=1;break
-                default:
-                    break
-                }
-                switch extra2{
-                case "Strength":
-                    str+=1;
-                    break
-                case "Dexterity":
-                    dex+=1;break
-                case "Constitution":
-                    con+=1;break
-                case "Intelligence":
-                    int+=1;break
-                case "Wisdom":
-                    wis+=1;break
-                case "Charisma":
-                    cha+=1;break
-                default:
-                    break
-                }
-            }
-            break
-        case "Half-Orc":
-            str+=2;con+=1;
-            break
-        case "Tiefling":
-            int+=1;cha+=2;
-            break
-        default:
-            str+=0;dex+=0;con+=0;int+=0;wis+=0;cha+=0;
-            break
-        }
+        
+        
+        
+        
         if cl == "Bard" || cl == "Cleric" || cl == "Druid" || cl == "Monk" || cl == "Rogue" || cl == "Warlock" {
             hit_dice=(1,8);
         }

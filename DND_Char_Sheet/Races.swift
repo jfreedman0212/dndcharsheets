@@ -8,6 +8,7 @@
 
 import Foundation
 
+
 class Race{
     var str,dex,con,int,wis,cha: Int;
     init(){
@@ -16,80 +17,83 @@ class Race{
 }
 
 class MountainDwarf: Race{
-    init(){
+    override init(){
         super.init()
         con=2;str=2
     }
 }
 class HillDwarf: Race{
-    init(){
+    override init(){
         super.init()
         con=2;wis=1
     }
 }
 class HighElf: Race{
-    init(){
+    override init(){
         super.init()
         dex=2;int=1
     }
 }
 class DarkElf: Race{
-    init(){
+    override init(){
         super.init()
         dex=2;cha=1
     }
 }
 class LightfootHalfling: Race{
-    init(){
+    override init(){
         super.init()
         dex=2;cha=1
     }
 }
 class StoutHalfling: Race{
-    init(){
+    override init(){
         super.init()
         dex=2;con=1
     }
 }
 class Human: Race{
-    init(){
+    override init(){
         super.init()
         str+=1;dex+=1;con+=1;int+=1;wis+=1;cha+=1;
     }
 }
 class Dragonborn: Race{
-    init(){
+    override init(){
         super.init()
         str=2;cha=1
     }
 }
 class ForestGnome: Race{
-    init(){
+    override init(){
         super.init()
         int=2;dex=1
     }
 }
 class RockGnome: Race{
-    init(){
+    override init(){
         super.init()
         int=2;con=1
     }
 }
 class HalfElf: Race{
-    init(){
+    override init(){
         super.init()
         cha=2;
     }
 }
 class HalfOrc: Race{
-    init(){
+    override init(){
         super.init()
         str=2;con=1
     }
 }
 class Tiefling: Race{
-    init(){
+    override init(){
         super.init()
         int=1;cha=2
     }
 }
+
+let test = NSClassFromString("DND_Char_Sheet.Human");
+
