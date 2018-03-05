@@ -7,12 +7,32 @@
 //
 
 import Foundation
+import os.log
 
 
 class Race{
     var str,dex,con,int,wis,cha: Int;
     init(){
         str=0;dex=0;con=0;int=0;wis=0;cha=0;
+    }
+    
+    func GetStr() -> Int{
+        return str;
+    }
+    func GetDex() -> Int{
+        return dex
+    }
+    func GetCon() -> Int{
+        return con
+    }
+    func GetInt() -> Int{
+        return int
+    }
+    func GetWis() -> Int{
+        return wis;
+    }
+    func GetCha() -> Int{
+        return cha;
     }
 }
 
@@ -95,5 +115,5 @@ class Tiefling: Race{
     }
 }
 
-let test = NSClassFromString("DND_Char_Sheet.Human");
+
 
