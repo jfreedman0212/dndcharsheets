@@ -21,6 +21,16 @@ class Character: NSObject,NSCoding{
         clss = cl; race = r;name = n;
         
         
+        if let charRace = NSClassFromString("DND_Char_Sheets.\(r)") as? Race.Type{
+            let instanceTest = charRace.init()
+            str += instanceTest.str;
+            dex += instanceTest.dex;
+            con += instanceTest.con;
+            int += instanceTest.int;
+            wis += instanceTest.wis;
+            cha += instanceTest.cha;
+        }
+        
         
         
         if cl == "Bard" || cl == "Cleric" || cl == "Druid" || cl == "Monk" || cl == "Rogue" || cl == "Warlock" {
