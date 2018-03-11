@@ -21,6 +21,7 @@
 		752333A5204B4AC1006B7572 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 752333A3204B4AC1006B7572 /* Main.storyboard */; };
 		752333AA204B4AC1006B7572 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 752333A9204B4AC1006B7572 /* Assets.xcassets */; };
 		752333AD204B4AC1006B7572 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 752333AB204B4AC1006B7572 /* LaunchScreen.storyboard */; };
+		D02FC4AB2055C9DC00FE024E /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = D02FC4AA2055C9DC00FE024E /* main.swift */; };
 		D0941B04204B4F300051C625 /* Character.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0941B03204B4F300051C625 /* Character.swift */; };
 		D0941B06204B58FD0051C625 /* Dice.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0941B05204B58FD0051C625 /* Dice.swift */; };
 		D0BFA36F204DD1CC00380F87 /* Races.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0BFA36E204DD1CC00380F87 /* Races.swift */; };
@@ -43,6 +44,7 @@
 		752333A9204B4AC1006B7572 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		752333AC204B4AC1006B7572 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		752333AE204B4AC1006B7572 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D02FC4AA2055C9DC00FE024E /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		D0941B03204B4F300051C625 /* Character.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Character.swift; sourceTree = "<group>"; };
 		D0941B05204B58FD0051C625 /* Dice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dice.swift; sourceTree = "<group>"; };
 		D0BFA36E204DD1CC00380F87 /* Races.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Races.swift; sourceTree = "<group>"; };
@@ -96,6 +98,7 @@
 				D0941B03204B4F300051C625 /* Character.swift */,
 				D0941B05204B58FD0051C625 /* Dice.swift */,
 				D0BFA36E204DD1CC00380F87 /* Races.swift */,
+				D02FC4AA2055C9DC00FE024E /* main.swift */,
 			);
 			path = DND_Char_Sheet;
 			sourceTree = "<group>";
@@ -183,6 +186,7 @@
 				132340C9204C05B300767A3D /* CharacterViewController.swift in Sources */,
 				D0941B04204B4F300051C625 /* Character.swift in Sources */,
 				13F4B273204BD5D700252B06 /* StatsViewController.swift in Sources */,
+				D02FC4AB2055C9DC00FE024E /* main.swift in Sources */,
 				13F4B271204B705300252B06 /* CharacterAddViewController.swift in Sources */,
 				13F4B26F204B6BB200252B06 /* MainViewController.swift in Sources */,
 				D0BFA36F204DD1CC00380F87 /* Races.swift in Sources */,

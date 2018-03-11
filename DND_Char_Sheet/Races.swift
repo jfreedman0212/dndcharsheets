@@ -7,7 +7,6 @@
 //
 
 import Foundation
-import os.log
 
 
 class Race{
@@ -99,7 +98,7 @@ class RockGnome: Race{
 class HalfElf: Race{
     override init(){
         super.init()
-        cha=2;
+        cha=2
     }
 }
 class HalfOrc: Race{
